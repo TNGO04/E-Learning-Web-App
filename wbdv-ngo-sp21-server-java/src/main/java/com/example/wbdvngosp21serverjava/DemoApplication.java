@@ -1,4 +1,4 @@
-package com.example.myapp;
+package com.example.wbdvngosp21serverjava;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

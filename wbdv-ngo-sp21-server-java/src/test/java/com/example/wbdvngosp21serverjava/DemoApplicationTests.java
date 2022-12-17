@@ -1,4 +1,4 @@
-package com.example.myapp;
+package com.example.wbdvngosp21serverjava;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
