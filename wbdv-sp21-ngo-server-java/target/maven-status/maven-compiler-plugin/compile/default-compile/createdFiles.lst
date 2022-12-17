@@ -1,0 +1,11 @@
+com/example/wbdvsp2102jannunziserverjava/controllers/WidgetController.class
+com/example/wbdvsp2102jannunziserverjava/controllers/HttpSessionExamples.class
+com/example/wbdvsp2102jannunziserverjava/services/WidgetService.class
+com/example/wbdvsp2102jannunziserverjava/services/HelloObject.class
+com/example/wbdvsp2102jannunziserverjava/models/User.class
+com/example/wbdvsp2102jannunziserverjava/DemoApplication.class
+com/example/wbdvsp2102jannunziserverjava/repositories/UserRepository.class
+com/example/wbdvsp2102jannunziserverjava/repositories/WidgetRepository.class
+com/example/wbdvsp2102jannunziserverjava/controllers/UserController.class
+com/example/wbdvsp2102jannunziserverjava/services/HelloService.class
+com/example/wbdvsp2102jannunziserverjava/models/Widget.class
