@@ -1,0 +1,5 @@
+@media (min-width: 576px) {
+    .form-inline .form-control.form-control-sm {
+        width: 150px;
+    }
+    }
