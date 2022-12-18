@@ -11,3 +11,7 @@ div {
 select#roleFld {
     width: 120px;
 }
+
+.wbdv-hidden {
+    display:none;
+}
