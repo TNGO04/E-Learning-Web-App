@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const CourseManagerHeader = () => 
+export const CourseManagerHeader = ({addCourse}) => 
         <div className="row border p-3 ">
             <div className="col-1">
                 <i className="fa-solid fa-bars fa-2x"></i>
@@ -15,7 +15,8 @@ export const CourseManagerHeader = () =>
                         className="form-control"/>
             </div>
             <div className="col-2">
-                <i className="fa-solid fa-circle-plus fa-2x float-right text-danger"></i>
+                <i onClick={addCourse}
+                    className="fa-solid fa-circle-plus fa-2x float-right text-danger"></i>
             </div>
             
         </div>
