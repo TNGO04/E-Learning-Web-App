@@ -42,7 +42,7 @@ class CourseRow extends React.Component {
 
                     {
                         !this.state.editing && 
-                        <Link to={`/courses/editor/${this.props.course._id}`}>
+                        <Link to={`/courses/editor/`}>
                             <i className="fa-solid fa-file"></i> {this.state.currentTitle}
                         </Link>
                     }

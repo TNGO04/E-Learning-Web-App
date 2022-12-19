@@ -3,6 +3,7 @@ import courseService from "../services/course-service"
 import CourseManagerHeader from './course-manager-header'
 import CourseTable from './course-table/course-table'
 import CourseGrid from './course-grid/course-grid'
+import CourseEditor from './course-editor/course-editor'
 import { Link, BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
 
 
@@ -74,6 +75,11 @@ class CourseManager extends React.Component {
                                         courses = {this.state.courses}
                                         updateCourse = {this.updateCourse}
                                         deleteCourse = {this.deleteCourse}
+                                    />
+                                }/>
+                            <Route path="/courses/editor"
+                                element= {
+                                    <CourseEditor
                                     />
                                 }/>
                         </Routes>

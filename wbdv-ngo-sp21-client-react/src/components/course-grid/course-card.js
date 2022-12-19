@@ -23,7 +23,7 @@ const CourseCard = ({course, updateCourse, deleteCourse}) => {
 
                     {
                         !editing && 
-                        <Link to={`/courses/editor/${course._id}`}>
+                        <Link to={`/courses/editor/`}>
                             <h5 className="card-title">{currentTitle}</h5>
                         </Link>
                     }
