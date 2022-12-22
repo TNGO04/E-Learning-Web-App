@@ -1,7 +1,9 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
-const CourseEditor = () => {
+const CourseEditor = ({
+}) => {
+    const {moduleId, courseId, lessonId} = useParams();
     const navigate = useNavigate()
     return (
     <div className="container">
@@ -11,24 +13,8 @@ const CourseEditor = () => {
         <div className="row">
             <div className="col-4">
                 <ul className="list-group">
-                    <li className="list-group-item">Course 1
-                        <i className="fa-sharp fa-solid fa-pen float-right"></i>
+                    <li className="list-group-item">
                     </li>
-                    <li className="list-group-item active">Course 1
-                        <i className="fa-sharp fa-solid fa-pen float-right"></i>
-                    </li>
-                    <li className="list-group-item">Course 1
-                        <i className="fa-sharp fa-solid fa-pen float-right"></i>
-                    </li>
-                    <li className="list-group-item active form-inline">
-                            <input type="text" className="form-control form-control-sm"/>
-                            <i className="fa-sharp fa-solid fa-pen float-right"></i>
-
-                    </li>
-
-                    <li className="list-group-item text-center text-primary">
-                        <i className="fa-solid fa-plus fa-2x m-auto"></i>
-                </li>
                 </ul>
             </div>
 

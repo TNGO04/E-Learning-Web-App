@@ -77,11 +77,13 @@ class CourseManager extends React.Component {
                                         deleteCourse = {this.deleteCourse}
                                     />
                                 }/>
-                            <Route path="/courses/editor"
-                                element= {
-                                    <CourseEditor
-                                    />
-                                }/>
+                            {["/courses/:layout/edit/:courseId",
+                            "/courses/:layout/edit/:courseId/modules/:moduleId",
+                            "/courses/:layout/edit/:courseId/modules/:moduleId/lessons/:lessonId"].map((path) =>
+                                <Route path={path}
+                                    element= {<CourseEditor/>}/>
+                        
+                            )}
                         </Routes>
                     </BrowserRouter>
                 </div>
