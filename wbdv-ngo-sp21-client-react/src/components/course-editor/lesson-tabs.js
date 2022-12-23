@@ -16,23 +16,26 @@ const LessonTabs = ({
     const {layout, moduleId, courseId, lessonId} = useParams();
 
     useEffect(() => {
-        findLessonsForModule(moduleId)
+        if (moduleId !== "undefined" && typeof moduleId !== "undefined") {
+            findLessonsForModule(moduleId)
+        }
     }, [moduleId])
 
     return (
-        <ul className="nav nav-tabs">
+        <ul className="nav nav-tabs pb-3" style={{'display': 'block-inline'}}>
             {
                 myLessons.map(lesson =>
-                    <li key ={lesson._id} className={`px-3 col-lg-3 nav-item ${lessonId === lesson._id ? 'active' : ''}`}>
+                    <li key ={lesson._id} className={`px-3 col-lg-3 nav-item`}>
                         <EditableItem item={lesson}
                             deleteItem={deleteLesson}
                             updateItem={updateLesson}
-                            to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lesson._id}`}/>
+                            to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lesson._id}`}
+                            active= {lessonId === lesson._id ? true : false}/>
                     </li>)
             }
 
-            <li className="nav-tabs">
-                <i onClick={(event) => createLesson(moduleId)} className="fa-solid fa-plus fa-2x m-auto"/>
+            <li className="nav pb-3 pt-3">
+                <i onClick={(event) => createLesson(moduleId)} className="fa-solid fa-plus fa-lg m-auto"/>
             </li>
         </ul>
     )

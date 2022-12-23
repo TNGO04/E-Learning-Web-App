@@ -30,3 +30,11 @@ export const deleteTopic = topicID =>
     fetch(`${API_URL}/topics/${topicID}`, {
         method: 'DELETE'
     }).then(response => response.json())
+
+export default {
+    createTopic,
+    findTopicsForLesson,
+    findTopic,
+    updateTopic,
+    deleteTopic
+}

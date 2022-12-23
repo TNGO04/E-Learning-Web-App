@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { $CombinedState } from "redux";
 
 const EditableItem = ({
     to,
@@ -15,12 +16,15 @@ const EditableItem = ({
 
     const saveTitle = (value) => {
         setEditing(false);
-        updateItem(item);
+
+        updateItem({
+            ...item,
+            title: currentTitle});
 
     }
 
     return (
-        <span className= {`${active ? 'active' : ''}`}>
+        <span className= {`${active ? 'active' : ''} nav-link `}>
             {
                 !editing &&
                 <>
@@ -30,7 +34,8 @@ const EditableItem = ({
                         </span>
                     </Link>
                     
-                    <i onClick={(event => setEditing(true))} className="ms-2 fa-solid fa-pen float-end"></i>
+                    <i onClick={(event => setEditing(true))} className="ms-2 fa-solid fa-pen mr-5"></i>
+                    
                 </>
             }
 
