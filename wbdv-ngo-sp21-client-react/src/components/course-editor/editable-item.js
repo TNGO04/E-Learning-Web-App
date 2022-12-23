@@ -30,19 +30,19 @@ const EditableItem = ({
                         </span>
                     </Link>
                     
-                    <i onClick={(event => setEditing(true))} className="fa-sharp fa-solid fa-pen float-end"></i>
+                    <i onClick={(event => setEditing(true))} className="ms-2 fa-solid fa-pen float-end"></i>
                 </>
             }
 
             {
                 editing &&
-                <span style={{whiteSpace: "nowrap"}}>
+                <span>
                     <input onChange={event => setCurrentTitle(event.target.value)}
                         val={currentTitle}
-                        className="form-control-sm form-control"
-                        style={{display: "inline", float: "left", width: "50%"}} />
-                    <i onClick={event => deleteItem(item)} className="fa-sharp fa-2x fa-solid fa-times float-end"/>
-                    <i onClick={event => saveTitle()} className="fa-sharp fa-2x fa-solid fa-check float-end"/>
+                        className="form-control-xs form-control mb-3"
+                        style={{display: "inline", width: "60%"}} />
+                    <i onClick={event => deleteItem(item)} className="fa-2x fa-solid fa-times float-end"/>
+                    <i onClick={event => saveTitle()} className="fa-2x fa-solid fa-check float-end"/>
                 </span>
             }
 

@@ -2,14 +2,16 @@ import React from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import ModuleList from "./module-list";
 import moduleReducer from "../../reducers/module-reducer"
+import lessonReducer from "../../reducers/lesson-reducer"
 import {combineReducers, createStore} from "redux"
 import {configureStore} from "@reduxjs/toolkit"
 import { Provider } from "react-redux";
-
+import LessonTabs from "./lesson-tabs";
 
 
 const rootReducer = combineReducers({
-    moduleReducer: moduleReducer
+    moduleReducer: moduleReducer,
+    lessonReducer: lessonReducer
 });
 
 
@@ -33,27 +35,7 @@ const CourseEditor = () => {
 
 
                         <div className="col-8">
-                            <ul className="nav nav-tabs">
-                                <li className="nav-item">
-                                    <a className="nav-link active">Active</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link">Unselected</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link disabled">Disabled</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link active">
-                                            <div className="form-inline">
-                                                    <input type="text" placeholder="Edit Lesson 4"
-                                                    className="form-control form-control-sm mr-3"/>
-                                                    <i className="fa-solid fa-close"></i>
-                
-                                            </div>
-                                    </a>
-                                </li>
-                            </ul>
+                            <LessonTabs/>                            
                         </div>
                     </div>
                 </div>

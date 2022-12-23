@@ -29,7 +29,7 @@ const ModuleList = ({
                             <EditableItem item={module} 
                                         deleteItem={deleteModule} 
                                         updateItem={updateModule}
-                                        to={`/courses/${layout}/edit/${courseId}/modules/${module._id}`}
+                                        to={`/courses/${layout}/edit/${courseId}/modules/${module._id}/`}
                                         active= {moduleId === module._id ? true : false}
                             />
                         </li>)

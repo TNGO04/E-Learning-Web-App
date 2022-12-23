@@ -23,10 +23,18 @@ export const updateLesson = (lessonID, lesson) =>
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(module)
+        body: JSON.stringify(lesson)
     }).then(response => response.json());
 
 export const deleteLesson = lessonID =>
     fetch(`${API_URL}/lessons/${lessonID}`, {
         method: 'DELETE'
     }).then(response => response.json())
+
+export default {
+    createLesson,
+    findLessonsForModule,
+    findLesson,
+    updateLesson,
+    deleteLesson
+}
