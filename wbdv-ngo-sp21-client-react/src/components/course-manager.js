@@ -79,8 +79,8 @@ class CourseManager extends React.Component {
                                 }/>
                             {["/courses/:layout/edit/:courseId",
                             "/courses/:layout/edit/:courseId/modules/:moduleId",
-                            "/courses/:layout/edit/:courseId/modules/:moduleId/lessons/:lessonId"].map((path) =>
-                                <Route path={path}
+                            "/courses/:layout/edit/:courseId/modules/:moduleId/lessons/:lessonId"].map((path, index) =>
+                                <Route path={path} key={index}
                                     element= {<CourseEditor/>}/>
                         
                             )}

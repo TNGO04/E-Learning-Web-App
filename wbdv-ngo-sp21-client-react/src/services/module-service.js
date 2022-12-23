@@ -30,3 +30,11 @@ export const deleteModule = moduleID =>
     fetch(`${API_URL}/modules/${moduleID}`, {
         method: 'DELETE'
     }).then(response => response.json())
+
+export default {
+    createModule,
+    findModulesForCourse,
+    findModule,
+    updateModule,
+    deleteModule
+}
