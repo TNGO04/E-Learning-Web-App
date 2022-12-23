@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import { updateCourse } from '../../services/course-service'
 
 /**
  * CourseRow represents a row component in CourseTable.
@@ -26,7 +25,7 @@ class CourseRow extends React.Component {
             ...this.props.course,
             title: this.state.currentTitle
         }
-        updateCourse(newCourse)
+        this.props.updateCourse(newCourse)
     }
 
     /**
