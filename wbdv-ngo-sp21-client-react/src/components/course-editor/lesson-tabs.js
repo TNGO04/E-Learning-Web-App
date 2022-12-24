@@ -19,7 +19,7 @@ const LessonTabs = ({
         if (moduleId !== "undefined" && typeof moduleId !== "undefined") {
             findLessonsForModule(moduleId)
         }
-    }, [moduleId])
+    }, [moduleId, lessonId])
 
     return (
         <ul className="nav nav-tabs pb-3" style={{'display': 'block-inline'}}>

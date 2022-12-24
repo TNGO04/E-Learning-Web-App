@@ -40,9 +40,8 @@ const CourseEditor = () => {
 
 
                         <div className="col-8">
-                            <LessonTabs/> 
-
-                            <div className="pt-100"><TopicPills/> </div>                       
+                            <LessonTabs/>    
+                            <TopicPills/>                        
                         </div>
                     </div>
                 </div>
