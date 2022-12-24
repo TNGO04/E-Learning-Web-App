@@ -55,10 +55,10 @@ class CourseRow extends React.Component {
                         />
                     }
                 </div>
-                <div className="col-2">
+                <div className="col-2 d-none d-md-block d-lg-block">
                     {this.props.course.owner}
                 </div>
-                <div className="col-2">
+                <div className="col-2 d-none d-md-block d-lg-block">
                     {this.props.course.lastModified}
                 </div>
 

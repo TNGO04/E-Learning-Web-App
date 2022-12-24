@@ -11,12 +11,12 @@ const CourseGrid = ({courses, updateCourse, deleteCourse}) =>
                     Recent Documents 
                 </div>
 
-                <div className="col-4 font-weight-bold">
+                <div className="col-4 font-weight-bold d-none d-md-block">
                     Owned by me <i className="fa-solid fa-caret-down"></i>
                 </div>
 
                 <div className="col-2">
-                    <div className="pull-right">
+                    <div className="d-flex justify-content-start align-items-center gap-3">
                         <i className="fa-solid fa-arrow-down-z-a"/>
                         <i className="fa-solid fa-folder"/>
                         <Link to="/courses/table">

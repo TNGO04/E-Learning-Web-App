@@ -19,3 +19,10 @@ code {
 .nav-pills .active a {
   color: white;
 }
+
+.container .form-control {
+  height: 30px;
+  line-height: 30px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}

@@ -18,22 +18,20 @@ class CourseTable extends React.Component {
                             Title <i className="fa-solid fa-caret-up"></i>
                         </div>
 
-                        <div className="col-2">
+                        <div className="col-2 d-none d-md-block d-lg-block">
                             Owned by
                         </div>
 
-                        <div className="col-2">
+                        <div className="col-2 d-none d-md-block d-lg-block">
                             Last modified
                         </div>
 
-                        <div className="col-2">
-                            <div className="pull-right">
-                                <i className="fa-solid fa-arrow-down-z-a"/>
-                                <i className="fa-solid fa-folder"/>
-                                <Link to="/courses/grid">
-                                    <i className="fa-solid fa-th"/>
-                                </Link>
-                            </div>
+                        <div className="col-2 d-flex justify-content-start align-items-center gap-3">
+                            <i className="fa-solid fa-arrow-down-z-a"/>
+                            <i className="fa-solid fa-folder"/>
+                            <Link to="/courses/grid">
+                                <i className="fa-solid fa-th"/>
+                            </Link>
                         </div>
                     </div>
                     {

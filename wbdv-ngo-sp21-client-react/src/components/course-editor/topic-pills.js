@@ -21,22 +21,23 @@ const TopicPills = ({
     }, [moduleId, lessonId])
 
     return (
-        <ul className="nav nav-pills nav-fill">
-        {
-            topics.map(topic =>
-                <li key ={topic._id} className={`px-3 col-lg-3 nav-item ${topicId === topic._id ? 'active' : ''}`}>
-                    <EditableItem item={topic}
-                        deleteItem={deleteTopic}
-                        updateItem={updateTopic}
-                        to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lessonId}/topics/${topic._id}`}
-                        active= {topicId === topic._id ? true : false}/>
-                </li>)
-        }
-
-        <li className="nav nav-pills pb-3 pt-3">
-            <i onClick={(event) => createTopic(lessonId)} className="fa-solid fa-plus fa-lg m-auto"/>
-        </li>
-    </ul>
+        <div className="mt-2">
+            <ul className="nav nav-pills nav-fill">
+            {
+                topics.map(topic =>
+                    <li key ={topic._id} className={`px-3 col-lg-3 nav-item ${topicId === topic._id ? 'active' : ''}`}>
+                        <EditableItem item={topic}
+                            deleteItem={deleteTopic}
+                            updateItem={updateTopic}
+                            to={`/courses/${layout}/edit/${courseId}/modules/${moduleId}/lessons/${lessonId}/topics/${topic._id}`}
+                            active= {topicId === topic._id ? true : false}/>
+                    </li>)
+            }
+            <li className="nav nav-pills pb-3 pt-3">
+                <i onClick={(event) => createTopic(lessonId)} className="fa-solid fa-plus fa-lg m-auto"/>
+            </li>
+            </ul>
+        </div>
     )
 
 }

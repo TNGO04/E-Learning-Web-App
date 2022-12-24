@@ -1,5 +1,5 @@
 import React from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import ModuleList from "./module-list";
 import moduleReducer from "../../reducers/module-reducer"
 import lessonReducer from "../../reducers/lesson-reducer"
@@ -22,12 +22,14 @@ const store = createStore(rootReducer);
 
 const CourseEditor = () => {
     const navigate = useNavigate();
+    const {layout} = useParams();
 
     return (
         <Provider store={store}>
             <div className="container">
                 <h1 className="mt-2">
-                    <i className="fa-solid fa-xmark" onClick={() => navigate(-1)}></i>
+
+                    <Link to={`/courses/${layout}`}><i className="fa-solid fa-xmark"/></Link>
                     Course Editor</h1>
                 
 
@@ -38,8 +40,9 @@ const CourseEditor = () => {
 
 
                         <div className="col-8">
-                            <LessonTabs/>    
-                            <TopicPills/>                        
+                            <LessonTabs/> 
+
+                            <div className="pt-100"><TopicPills/> </div>                       
                         </div>
                     </div>
                 </div>
