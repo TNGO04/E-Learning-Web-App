@@ -4,17 +4,20 @@ import ModuleList from "./module-list";
 import moduleReducer from "../../reducers/module-reducer"
 import lessonReducer from "../../reducers/lesson-reducer"
 import topicReducer from "../../reducers/topic-reducer";
+import widgetReducer from "../../reducers/widget-reducer";
 import {combineReducers, createStore} from "redux"
 import {configureStore} from "@reduxjs/toolkit"
 import { Provider } from "react-redux";
 import LessonTabs from "./lesson-tabs";
 import TopicPills from "./topic-pills";
+import WidgetList from "../widgets/widget-list";
 
 
 const rootReducer = combineReducers({
     moduleReducer: moduleReducer,
     lessonReducer: lessonReducer,
-    topicReducer: topicReducer
+    topicReducer: topicReducer,
+    widgetReducer: widgetReducer
 });
 
 
@@ -41,7 +44,8 @@ const CourseEditor = () => {
 
                         <div className="col-8">
                             <LessonTabs/>    
-                            <TopicPills/>                        
+                            <TopicPills/>
+                            <WidgetList/>
                         </div>
                     </div>
                 </div>
