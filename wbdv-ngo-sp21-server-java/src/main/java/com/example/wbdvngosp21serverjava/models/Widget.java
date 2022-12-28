@@ -1,4 +1,4 @@
-package main.java.com.example.wbdvngosp21serverjava.models;
+package com.example.wbdvngosp21serverjava.models;
 
 public class Widget {
 
@@ -17,9 +17,7 @@ public class Widget {
     private String style;
     private String value;
 
-    public Widget() {
-
-    }
+    public Widget() {}
 
     public Widget(String topicId, String name, Integer id, String type, Integer widgetOrder, String text, String url, Integer size, Integer width, Integer height, String cssClass, String style, String value) {
         this.topicId = topicId;
@@ -36,8 +34,6 @@ public class Widget {
         this.style = style;
         this.value = value;
     }
-    
-    
 
 
     public String getTopicId() {
