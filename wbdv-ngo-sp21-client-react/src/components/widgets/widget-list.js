@@ -15,7 +15,14 @@ const WidgetList = ({
     const {moduleId, lessonId, topicId} = useParams();
 
     useEffect(() => {
-        findWidgetsForTopic(topicId);
+
+        if (typeof topicId !== "undefined") {
+            findWidgetsForTopic(topicId);
+        }
+        else {
+            findWidgetsForTopic("dvf");
+        }
+
     }, [moduleId, lessonId, topicId]);
 
     const [editingWidget, setEditingWidget] = useState({});
