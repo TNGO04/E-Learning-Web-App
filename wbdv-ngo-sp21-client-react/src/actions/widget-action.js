@@ -16,7 +16,7 @@ export const createWidget = (dispatch, tid) => {
 
 export const deleteWidget = (dispatch, widget) => {
     return widgetService.deleteWidget(widget.id).then(
-        widget => dispatch({
+        response => dispatch({
             type: DELETE_WIDGET,
             wid: widget.id}));
 }

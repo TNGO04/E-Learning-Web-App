@@ -2,7 +2,7 @@ const API_URL = "http://localhost:8080/api"
 
 export const createWidget = (tid, widget) => {
     return fetch(`${API_URL}/topics/${tid}/widgets`, {
-        type: 'POST',
+        method: 'POST',
         body: JSON.stringify(widget),
         headers: {
             'content-type': 'application/json'
@@ -26,7 +26,7 @@ export const findAllWidgets = () => {
 
 export const updateWidget = (wid, widget) => {
     return fetch(`${API_URL}/widgets/${wid}`, {
-        type: 'PUT',
+        method: 'PUT',
         body: JSON.stringify(widget),
         headers: {
             'content-type': 'application/json'
@@ -36,7 +36,7 @@ export const updateWidget = (wid, widget) => {
 
 export const deleteWidget = wid => {
     return fetch(`${API_URL}/widgets/${wid}`, {
-        type: 'DELETE'
+        method: 'DELETE'
     }).then(response => response.json());
 }
 
