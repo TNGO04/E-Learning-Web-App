@@ -26,6 +26,7 @@ export const HeadingWidget = ({
                                              type: event.target.value})}} >
                         <option selected={widget.type === "Heading"} >Heading</option>
                         <option selected={widget.type === "Paragraph"}>Paragraph</option>
+                        <option selected={widget.type === "Image"}>Image</option>
                     </select>
                     <textarea className="m-2 form-control" style={{'height': '200px'}} rows={"5"} value={fieldText} onChange={event =>
                     {
