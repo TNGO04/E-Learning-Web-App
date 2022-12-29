@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/api"
+const API_URL = "http://localhost:9090/api"
 
 export const createWidget = (tid, widget) => {
     return fetch(`${API_URL}/topics/${tid}/widgets`, {

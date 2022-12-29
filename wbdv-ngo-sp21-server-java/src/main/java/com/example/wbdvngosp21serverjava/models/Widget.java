@@ -1,9 +1,20 @@
 package com.example.wbdvngosp21serverjava.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name="widgets")
 public class Widget {
 
     private String topicId;
     private String name;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String type;
     private Integer widgetOrder;
