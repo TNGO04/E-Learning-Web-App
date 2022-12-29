@@ -18,8 +18,8 @@ export const HeadingWidget = ({
 
             {
                 editing &&
-                <div className = "list-group">
-                    <select onChange={(event) => {
+                <div className = "form-group">
+                    <select className="form-control m-2" onChange={(event) => {
                         widget.type = event.target.value
                         setEditingWidget({
                                              ...widget,
@@ -27,12 +27,11 @@ export const HeadingWidget = ({
                         <option selected={widget.type === "Heading"} >Heading</option>
                         <option selected={widget.type === "Paragraph"}>Paragraph</option>
                     </select>
-                    <input value={fieldText} onChange={event =>
+                    <textarea className="m-2 form-control" style={{'height': '200px'}} rows={"5"} value={fieldText} onChange={event =>
                     {
                         widget.text = event.target.value
                         setText(event.target.value)
                     }}/>
-
                 </div>
 
 

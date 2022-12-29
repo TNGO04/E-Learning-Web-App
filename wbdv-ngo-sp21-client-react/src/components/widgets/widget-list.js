@@ -67,11 +67,11 @@ const WidgetList = ({
                             {
                                 editingWidget.id === widget.id &&
                                 <>
-                                    <i onClick={() => deleteWidget(widget)} className="fa fa-trash m-1"></i>
+                                    <i onClick={() => deleteWidget(widget)} className="fa fa-trash m-1 float-end"></i>
                                     <i onClick={() => {
                                         updateWidget(editingWidget)
                                         setEditingWidget({})
-                                    }} className="fa fa-check m-1"></i>
+                                    }} className="fa fa-check m-1 float-end"></i>
                                 </>
                             }
 

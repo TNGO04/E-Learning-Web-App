@@ -24,7 +24,7 @@ export const HeadingWidget = ({
             {
                 editing &&
                 <div className = "list-group">
-                <select onChange={(event) => {
+                <select className="m-2" onChange={(event) => {
                             widget.type = event.target.value
                             setEditingWidget({
                                 ...widget,
@@ -32,14 +32,14 @@ export const HeadingWidget = ({
                     <option selected={widget.type === "Heading"} >Heading</option>
                     <option selected={widget.type === "Paragraph"}>Paragraph</option>
                 </select>
-                <input value={fieldText} onChange={event =>
+                <input className="form-control m-2 p-2" value={fieldText} onChange={event =>
                         {
                             widget.text = event.target.value
                             setText(event.target.value)
                         }}
                         />
 
-                <select  onChange={(event) =>
+                <select  className="m-2" onChange={(event) =>
                         widget.size = +event.target.value} >
                     {
                         [1, 2, 3, 4, 5, 6].map(size =>
