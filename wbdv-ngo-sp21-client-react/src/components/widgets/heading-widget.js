@@ -32,6 +32,7 @@ export const HeadingWidget = ({
                     <option selected={widget.type === "Heading"} >Heading</option>
                     <option selected={widget.type === "Paragraph"}>Paragraph</option>
                     <option selected={widget.type === "Image"}>Image</option>
+                    <option selected={widget.type === "List"}>List</option>
                 </select>
                 <input className="form-control m-2 p-2" value={fieldText} onChange={event =>
                         {

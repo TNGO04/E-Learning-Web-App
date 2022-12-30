@@ -22,6 +22,7 @@ export const ImageWidget = ({
                         <option selected={widget.type === "Heading"} >Heading</option>
                         <option selected={widget.type === "Paragraph"}>Paragraph</option>
                         <option selected={widget.type === "Image"}>Image</option>
+                        <option selected={widget.type === "List"}>List</option>
                     </select>
 
 

@@ -5,6 +5,7 @@ import widgetAction from "../../actions/widget-action"
 import HeadingWidget from "./heading-widget";
 import ParagraphWidget from "./paragraph-widget";
 import ImageWidget from "./image-widget";
+import {ListWidget} from "./list-widget";
 
 const WidgetList = ({
     widgets = [],
@@ -60,6 +61,15 @@ const WidgetList = ({
                             {
                                 widget.type === "Image" &&
                                 <ImageWidget
+                                    setEditingWidget={setEditingWidget}
+                                    editing={editingWidget.id === widget.id}
+                                    widget={widget}
+                                />
+                            }
+
+                            {
+                                widget.type === "List" &&
+                                <ListWidget
                                     setEditingWidget={setEditingWidget}
                                     editing={editingWidget.id === widget.id}
                                     widget={widget}
