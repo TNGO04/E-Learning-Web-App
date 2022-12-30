@@ -13,13 +13,11 @@ const LessonTabs = ({
     findLessonsForModule
 }) => {
 
-    const {layout, moduleId, courseId, lessonId} = useParams();
+    const {layout, moduleId, courseId, lessonId, topicId} = useParams();
 
     useEffect(() => {
-        if (moduleId !== "undefined" && typeof moduleId !== "undefined") {
-            findLessonsForModule(moduleId)
-        }
-    }, [moduleId, lessonId])
+        findLessonsForModule(moduleId)
+    }, [courseId, moduleId, lessonId, moduleId, topicId])
 
     return (
         <ul className="nav nav-tabs pb-3" style={{'display': 'block-inline'}}>

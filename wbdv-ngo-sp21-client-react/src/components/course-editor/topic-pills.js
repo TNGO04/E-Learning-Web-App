@@ -15,7 +15,7 @@ const TopicPills = ({
 
     useEffect(() => {
         findTopicsForLesson(lessonId);
-    }, [moduleId, lessonId])
+    }, [courseId, moduleId, lessonId, moduleId, topicId])
 
     return (
         <div className="mt-2">

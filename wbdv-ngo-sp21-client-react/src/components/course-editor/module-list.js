@@ -13,11 +13,11 @@ const ModuleList = ({
     findModulesForCourse
 }) => {
 
-    const {layout, moduleId, courseId, lessonId} = useParams();
+    const {layout, moduleId, courseId, lessonId, topicId} = useParams();
 
     useEffect(() => {
         findModulesForCourse(courseId)
-    }, [courseId,lessonId, moduleId])
+    }, [courseId, moduleId, lessonId, moduleId, topicId])
 
     return (
         <div>
