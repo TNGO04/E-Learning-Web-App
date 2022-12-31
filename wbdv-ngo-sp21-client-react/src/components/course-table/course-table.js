@@ -14,7 +14,7 @@ class CourseTable extends React.Component {
 
                 <div>
                     <div className="row border p-2">
-                        <div className="col-6">
+                        <div className="col-4">
                             Title <i className="fa-solid fa-caret-up"></i>
                         </div>
 
@@ -24,6 +24,10 @@ class CourseTable extends React.Component {
 
                         <div className="col-2 d-none d-md-block d-lg-block">
                             Last modified
+                        </div>
+
+                        <div className="col-2 d-none d-md-block d-lg-block">
+                            Quizzes
                         </div>
 
                         <div className="col-2 d-flex justify-content-start align-items-center gap-3">

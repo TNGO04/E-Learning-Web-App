@@ -4,8 +4,28 @@ import CourseManagerHeader from './course-manager-header'
 import CourseTable from './course-table/course-table'
 import CourseGrid from './course-grid/course-grid'
 import CourseEditor from './course-editor/course-editor'
-import { Link, BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
+import QuizList from "./quizzes/quiz-list";
+import {combineReducers, createStore} from "redux";
+import quizReducer from "../reducers/quiz-reducer";
+import questionReducer from "../reducers/question-reducer";
+import moduleReducer from "../reducers/module-reducer";
+import lessonReducer from "../reducers/lesson-reducer";
+import topicReducer from "../reducers/topic-reducer";
+import widgetReducer from "../reducers/widget-reducer";
+import {Provider} from "react-redux";
+import QuizPage from "./quizzes/quiz-page";
 
+const rootReducer = combineReducers({
+                        quizReducer: quizReducer,
+                        questionReducer: questionReducer,
+                        moduleReducer: moduleReducer,
+                        lessonReducer: lessonReducer,
+                        topicReducer: topicReducer,
+                        widgetReducer: widgetReducer
+                    });
+
+const store = createStore(rootReducer);
 
 class CourseManager extends React.Component {
     state = {
@@ -54,6 +74,7 @@ class CourseManager extends React.Component {
 
     render() {
         return (
+        <Provider store={store}>
             <div>
                 <CourseManagerHeader addCourse= {this.addCourse}/>
                 
@@ -85,14 +106,26 @@ class CourseManager extends React.Component {
                                     element= {<CourseEditor/>}/>
                         
                             )}
+
+                            <Route path="/courses/:layout/edit/:courseId/quizzes"
+                                   element= {<QuizList/>}
+                            />
+
+                            <Route path="/courses/:layout/edit/:courseId/quizzes/:quizId"
+                                   element= {<QuizPage/>}
+                            />
+
+
+
                         </Routes>
                     </BrowserRouter>
                 </div>
 
                 
             </div>
+        </Provider>
         )
     }
 }
 
-export default CourseManager
+export default CourseManager;

@@ -5,7 +5,8 @@ import {Link} from 'react-router-dom'
  * CourseRow represents a row component in CourseTable.
  */
 class CourseRow extends React.Component {
-    
+
+
     constructor(props) {
         super(props)
 
@@ -37,7 +38,7 @@ class CourseRow extends React.Component {
         return (
             // display of course title varies based on whether currently in editing mode or not
             <div className="row border p-2">
-                <div className="col-6">
+                <div className="col-4">
 
                     {
                         !this.state.editing && 
@@ -60,6 +61,12 @@ class CourseRow extends React.Component {
                 </div>
                 <div className="col-2 d-none d-md-block d-lg-block">
                     {this.props.course.lastModified}
+                </div>
+
+                <div className="col-2 d-none d-md-block d-lg-block">
+                    <Link to={`/courses/table/edit/${this.props.course._id}/quizzes/`}>
+                        Quizzes
+                    </Link>
                 </div>
 
                 {/* display of buttons varies depending on editing mode*/}
