@@ -23,7 +23,7 @@ export const QuizList = ({
                 quizzes.map(quiz =>
                     <li>
                         <Link to={`/courses/${layout}/edit/${courseId}/quizzes/${quiz._id}`}>
-                            Quiz {quiz._id}
+                            {quiz.title}
                         </Link>
                     </li>)
             }

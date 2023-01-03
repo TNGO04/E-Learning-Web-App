@@ -1,4 +1,14 @@
 const express = require('express');
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://127.0.0.1:27017/db_whiteboard',
+                 {useNewUrlParser: true, useUnifiedTopology: true});
+
+const connection = mongoose.connection;
+
+connection.once("open", function() {
+    console.log("MongoDB database connection established successfully");
+});
+
 const app = express();
 
 app.use(function(req, res, next) {
