@@ -1,9 +1,13 @@
 const mongoose = require('mongoose')
 
-const quizSchema = mongoose.Schema({
+const quizzesSchema = mongoose.Schema({
     _id: String,
-    title:String }, {collection: "quizzes"});
+    title:String,
+    questions: [{
+        type: String,
+        ref: 'QuestionsModel'
+    }]}, {collection: "quizzes"});
 
-module.exports = quizSchema;
+module.exports = quizzesSchema;
 
 
