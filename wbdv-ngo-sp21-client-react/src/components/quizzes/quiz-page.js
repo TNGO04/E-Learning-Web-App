@@ -4,10 +4,12 @@ import questionAction from "../../actions/question-action";
 import MultipleChoiceQuestion from "./questions/multiple-choice-question";
 import {connect} from "react-redux";
 import TrueFalseQuestion from "./questions/true-false-question";
+import quizAction from "../../actions/quiz-action";
 
 export const QuizPage = ({
     questions = [],
-    findQuestionsForQuiz}) => {
+    findQuestionsForQuiz,
+    submitQuiz}) => {
     const {layout, courseId, quizId} = useParams();
 
     useEffect(() => {
@@ -22,9 +24,11 @@ export const QuizPage = ({
                 questions.map(question =>
                     <>
                         {question.type === "TRUE_FALSE" &&
-                            <TrueFalseQuestion key={question._id} question={question} />}
+                            <TrueFalseQuestion key={question._id} question={question}
+                                               submitQuiz={submitQuiz} />}
                         {question.type === "MULTIPLE_CHOICE" &&
-                            <MultipleChoiceQuestion key={question._id} question={question} />}
+                            <MultipleChoiceQuestion key={question._id} question={question}
+                                                submitQuiz={submitQuiz} />}
                     </>
                               )
             }
@@ -40,7 +44,8 @@ const stpm = state => ({
 })
 
 const dtpm = dispatch => ({
-    findQuestionsForQuiz: (quid) => questionAction.findQuestionsForQuiz(dispatch, quid)
+    findQuestionsForQuiz: (quid) => questionAction.findQuestionsForQuiz(dispatch, quid),
+    submitQuiz: (quizId, question) => quizAction.submitQuiz(dispatch, quizId, question)
 })
 
 export default connect(stpm,dtpm)(QuizPage)

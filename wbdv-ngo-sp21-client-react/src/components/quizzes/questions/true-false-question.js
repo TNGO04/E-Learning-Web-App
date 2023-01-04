@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-export const TrueFalseQuestion = ({question}) => {
+export const TrueFalseQuestion = ({question, submitQuiz}) => {
     const [answer, setAnswer] = useState("");
     const [isGraded, setIsGraded] = useState(false);
 
@@ -28,7 +28,9 @@ export const TrueFalseQuestion = ({question}) => {
                 <div className="my-3">Your answer: {answer}</div>
                 <button onClick={()=> {
                     setIsGraded(true)
-                }} className="btn btn-primary">Grade</button>
+                    question.answer = answer
+                    submitQuiz(question.quizId, question)
+                }} className="btn btn-primary">Submit</button>
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
 import {
     CREATE_QUIZ,
     DELETE_QUIZ, FIND_ALL_QUIZZES,
-    FIND_QUIZZES_FOR_COURSE,
+    FIND_QUIZZES_FOR_COURSE, SUBMIT_QUIZ,
     UPDATE_QUIZ
 } from "../actions/quiz-action";
 
@@ -40,6 +40,9 @@ export const quizReducer = (state= initialState, action) => {
                 ...state,
                 quizzes: action.quizzes
             }
+
+        case SUBMIT_QUIZ:
+            return state
         default:
             return state
     }

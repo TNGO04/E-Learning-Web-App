@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-export const MultipleChoiceQuestion = ({question}) => {
+export const MultipleChoiceQuestion = ({question, submitQuiz}) => {
     const [answer, setAnswer] = useState("");
     const [isGraded, setIsGraded] = useState(false);
 
@@ -22,7 +22,11 @@ export const MultipleChoiceQuestion = ({question}) => {
 
             <div>
                 <div className="my-3">Your answer: {answer}</div>
-                <button onClick={()=> setIsGraded(true)} className="btn btn-primary">Grade</button>
+                <button onClick={()=> {
+                    setIsGraded(true)
+                    question.answer = answer
+                    submitQuiz(question.quizId, question)
+                }} className="btn btn-primary">Submit</button>
             </div>
 
         </div>
